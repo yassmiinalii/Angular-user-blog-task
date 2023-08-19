@@ -10,12 +10,10 @@ import { IUser } from 'src/app/shared/models/iuser';
 })
 export class ApiService {
 
-  constructor( private httpClient: HttpClient) {}
+  constructor( private httpClient: HttpClient,) {}
 
   getAllUsers(): Observable<IUser[]> {
-    return this.httpClient.get<IUser[]>( 'users').pipe(
-      shareReplay(1)
-    );
+    return this.httpClient.get<IUser[]>( 'users');
   }
 
   getPostsByUserId(userId: number){
