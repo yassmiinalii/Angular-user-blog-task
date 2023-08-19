@@ -1,10 +1,12 @@
 <div class="post-card-wrapper">
   <div class="user-information-wrapper d-flex align-items-center gap-3"
        *ngIf="user$ | async as user">
-    <div class="user-img-wrapper">
+    <div class="user-img-wrapper" [class.placeholder-glow]="!isUserImageLoaded">
       <img class="img-fluid user-img"
-           [ngSrc]="'https://source.unsplash.com/random/'+user.id+'/?profile'"
+           ngSrc="{{'https://source.unsplash.com/random/60x60/?profile?'+user.id}}"
            width="60" height="60" priority
+           [class.placeholder]="!isUserImageLoaded"
+           (load)="onLoadUserImage()"
            [alt]="user.name + 'image'" />
     </div>
     <p class="user-title"> {{ user.email }} </p>
@@ -15,10 +17,12 @@
     <p class="post-description"> {{ post.body | limitCharacters : 160 }} </p>
   </div>
 
-  <div class="post-img-wrapper">
+  <div class="post-img-wrapper" [class.placeholder-glow]="!isPostImageLoaded">
     <img class="img-fluid post-img"
-         ngSrc="{{ 'https://source.unsplash.com/random/'+post.id}}"
+         ngSrc="{{ 'https://source.unsplash.com/random/600x400/?'+post.id}}"
          height="400" width="600"
+         [class.placeholder]="!isPostImageLoaded"
+         (load)="onLoadPostImage()"
          alt="randomImage" />
   </div>
 

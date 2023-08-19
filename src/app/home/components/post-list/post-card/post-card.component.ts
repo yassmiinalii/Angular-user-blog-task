@@ -16,6 +16,8 @@ export class PostCardComponent implements  OnInit , OnChanges {
   @Input() post: IPost;
   user$ :  Observable<IUser | undefined>
   isViewComments: boolean = false;
+  isUserImageLoaded : boolean = false;
+  isPostImageLoaded : boolean = false;
 
   constructor(private store : StoreService){}
 
@@ -31,6 +33,13 @@ export class PostCardComponent implements  OnInit , OnChanges {
 
   onViewComments() : void{
     this.isViewComments = !this.isViewComments
+  }
+
+  onLoadUserImage(){
+    this.isUserImageLoaded = true;
+  }
+  onLoadPostImage(){
+    this.isPostImageLoaded = true;
   }
 
 
