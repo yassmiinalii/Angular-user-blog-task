@@ -25,7 +25,8 @@
     ],
     "paths": {
       "@core/*": ["src/app/@core/*"],
-      "@stye/*": ["src/assets/@stye/*"]
+      "@stye/*": ["src/assets/@stye/*"],
+      "@img/*": ["src/assets/images/*"]
     }
   },
   "angularCompilerOptions": {
