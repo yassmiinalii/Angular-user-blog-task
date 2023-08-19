@@ -10,6 +10,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
+
 @NgModule({
   declarations: [
     UsersComponent,
@@ -19,7 +20,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   ],
   imports: [
     SharedModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+
   ]
 })
 export class HomeModule { }
