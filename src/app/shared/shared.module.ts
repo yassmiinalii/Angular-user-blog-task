@@ -2,7 +2,8 @@ import { NgModule, Pipe } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import{LimitCharactersPipe} from "./pipes/limit-characters.pipe";
 import { CommentsComponent } from './components/comments/comments.component';
-import { CommentItemComponent } from './components/comments/comment-item/comment-item.component'
+import { CommentItemComponent } from './components/comments/comment-item/comment-item.component';
+import { ErrorAlertComponent } from './components/error-alert/error-alert.component'
 
 const PIPES = [
   LimitCharactersPipe
@@ -10,7 +11,8 @@ const PIPES = [
 
 const COMPONENTS = [
   CommentsComponent,
-  CommentItemComponent
+  CommentItemComponent,
+  ErrorAlertComponent
 ]
 
 const MODULES = [
@@ -22,7 +24,8 @@ const MODULES = [
 @NgModule({
   declarations: [
     ...PIPES,
-    ...COMPONENTS
+    ...COMPONENTS,
+
   ],
   imports: [
     ...MODULES
