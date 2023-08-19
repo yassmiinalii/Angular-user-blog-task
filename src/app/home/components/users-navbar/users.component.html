@@ -5,11 +5,10 @@
 </nav> -->
 
 <div class="nav user-nav-wrapper ">
-
-
-    <a *ngFor="let item of [1,2,3,4,5,6,7,8,3,3]; let i = index"  class="user-nav-link" [class.active]="i === userId" > user name </a>
-
-
-
+  <a *ngFor="let user of users$ |async; let i = index"
+     class="user-nav-link"
+     routerLink="/"
+     routerLinkActive="active"
+     [queryParams]="{userId: user.id}"
+     [class.active]="false"> {{user.username}} </a>
 </div>
-

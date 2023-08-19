@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-
+import { NgOptimizedImage } from '@angular/common'
 import { HomeRoutingModule } from './home-routing.module';
 import { UsersComponent } from './components/users-navbar/users.component';
 import { PostCardComponent } from './components/post-list/post-card/post-card.component';
@@ -21,6 +21,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     SharedModule,
     HomeRoutingModule,
+    NgOptimizedImage
+
 
   ]
 })

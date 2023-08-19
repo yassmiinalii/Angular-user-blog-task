@@ -8,8 +8,9 @@
   flex-direction: column;
   gap: .7rem;
   @include border();
+
   .user-img-wrapper {
-    @include img-wrapper-base-style(60px,60px);
+    @include img-wrapper-base-style(60px, 60px);
     border-radius: 100px;
     .user-img {
       width: 60px;
@@ -20,7 +21,7 @@
   }
 
   .post-img-wrapper {
-    @include img-wrapper-base-style(100%,400px);
+    @include img-wrapper-base-style(100%, 400px);
     .post-img {
       width: 100%;
     }
@@ -30,9 +31,36 @@
     margin-top: 1rem;
     padding: 0.4rem 1rem;
     width: fit-content;
-    border-radius: 1.625rem;
+    border-radius: 100px;
     border-color: $gray-light-color;
     color: $font-black-color;
     background: #F3F3F2;
+    &:hover{
+      background: #c5c5c5;
+    }
   }
+
+
+  @media screen and (max-width: 768px) {
+    margin: .8rem;
+    padding: 1.5rem;
+    gap: .5rem;
+    .post-title{
+      font-size: .9rem;
+    }
+    .post-description {
+      font-size: .8rem;
+    }
+    .post-img {
+      height: 100%;
+    }
+    .btn-comment {
+      margin-top: 1rem;
+      padding: 0.4rem 1rem;
+      width: fit-content;
+      font-size: .6rem;
+    }
+  }
+
+
 }

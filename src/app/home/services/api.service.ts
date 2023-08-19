@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, shareReplay } from 'rxjs';
+import { IComment } from 'src/app/shared/models/icomment';
+import { IPost } from 'src/app/shared/models/ipost';
 import { IUser } from 'src/app/shared/models/iuser';
 
 @Injectable({
@@ -7,12 +10,21 @@ import { IUser } from 'src/app/shared/models/iuser';
 })
 export class ApiService {
 
-  constructor( private httpClient: HttpClient) {
-  }
+  constructor( private httpClient: HttpClient) {}
 
-
-  getAllUsers() {
+  getAllUsers(): Observable<IUser[]> {
     return this.httpClient.get<IUser[]>( 'users').pipe(
+      shareReplay(1)
     );
   }
+
+  getPostsByUserId(userId: number){
+    return this.httpClient.get<IPost[]>( `posts?userId=${userId}`);
+  }
+
+  getCommentsByPostId(postId : number){
+    return this.httpClient.get<IComment[]>( `comments?postId=${postId}`);
+  }
+
+
 }

@@ -1,15 +1,18 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ApiService } from '../../services/api.service';
+import { IUser } from 'src/app/shared/models/iuser';
+import { Observable } from 'rxjs';
+import { StoreService } from 'src/app/core/store/store.service';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
-export class UsersComponent {
+export class UsersComponent implements OnInit {
 
-
-  @Input() userId: number = 0;
-
-
+  users$ : Observable<IUser[]> = this.store.users$;
+  constructor( private store : StoreService){}
+  ngOnInit(): void { }
 
 }

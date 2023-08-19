@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IComment } from 'src/app/shared/models/icomment';
 
 @Component({
   selector: 'app-comment-item',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./comment-item.component.scss']
 })
 export class CommentItemComponent {
+
+  @Input() comment : IComment;
 
 }

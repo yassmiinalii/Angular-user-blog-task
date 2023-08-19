@@ -1,5 +1,5 @@
 import { NgModule, Pipe } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import{LimitCharactersPipe} from "./pipes/limit-characters.pipe";
 import { CommentsComponent } from './components/comments/comments.component';
 import { CommentItemComponent } from './components/comments/comment-item/comment-item.component'
@@ -13,6 +13,10 @@ const COMPONENTS = [
   CommentItemComponent
 ]
 
+const MODULES = [
+  CommonModule,
+  // NgOptimizedImage
+]
 
 
 @NgModule({
@@ -21,10 +25,10 @@ const COMPONENTS = [
     ...COMPONENTS
   ],
   imports: [
-    CommonModule
+    ...MODULES
   ],
   exports: [
-    CommonModule,
+    ...MODULES,
     ...PIPES,
     ...COMPONENTS
   ]

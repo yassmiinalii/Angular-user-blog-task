@@ -16,10 +16,6 @@ export class InterceptorService implements HttpInterceptor {
       url: API_URL + req.url ,
       headers: req.headers.append('Cache-Control', 'max-age=31536000, immutable'),
     });
-    console.log('inter');
-
-    console.log(modifiedRequest);
-
     return next.handle(modifiedRequest).pipe(
       retry(3),
     );

@@ -1,29 +1,30 @@
 <div class="post-card-wrapper">
-  <div class="user-information-wrapper d-flex align-items-center gap-3">
+  <div class="user-information-wrapper d-flex align-items-center gap-3"
+       *ngIf="user$ | async as user">
     <div class="user-img-wrapper">
-      <img class="img-fluid user-img" src="https://source.unsplash.com/random/80×80/?profile" alt="">
+      <img class="img-fluid user-img"
+           [ngSrc]="'https://source.unsplash.com/random/'+user.id+'/?profile'"
+           width="60" height="60" priority
+           [alt]="user.name + 'image'" />
     </div>
-    <p class="user-title">
-      Sincere@april.biz
-    </p>
+    <p class="user-title"> {{ user.email }} </p>
   </div>
+
   <div class="post-body">
-    <h4 class="post-title">
-      sung aut facer repelled provident occaecati exception option reprehended
-    </h4>
-    <p class="post-description">
-      {{"sung aut facer repelled provident occaecati exception option reprehended sung aut facer repelled provident occaecati exception option reprehended sung aut facer repelled provident occaecati exception option reprehended" |
-      limitCharacters:200}}
-    </p>
+    <h4 class="post-title"> {{ post.title }} </h4>
+    <p class="post-description"> {{ post.body | limitCharacters : 160 }} </p>
   </div>
 
   <div class="post-img-wrapper">
-    <img class="img-fluid post-img" src="https://source.unsplash.com/random/300*200" alt="">
+    <img class="img-fluid post-img"
+         ngSrc="{{ 'https://source.unsplash.com/random/'+post.id}}"
+         height="400" width="600"
+         alt="randomImage" />
   </div>
-  <button class="btn btn-secondary btn-comment " (click)="onViewComments()" >
+
+  <button class="btn  btn-comment" (click)="onViewComments()">
     <i class="bi bi-eye"></i>
     View Comments
   </button>
-  <app-comments *ngIf="isViewComments"></app-comments>
-
+  <app-comments *ngIf="isViewComments" [postId]="post.id" ></app-comments>
 </div>
