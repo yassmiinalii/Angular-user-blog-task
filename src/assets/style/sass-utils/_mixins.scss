@@ -12,10 +12,17 @@
   text-decoration: $text-decoration;
 }
 
-@mixin centerElement() {
+@mixin center-element() {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin img-wrapper-base-style($width, $hight){
+  width: $width;
+  height: $hight;
+  overflow: hidden;
+  @include center-element()
 }
 
 @mixin border($color: $gray-light-color, $size : 1px){

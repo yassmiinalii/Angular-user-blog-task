@@ -1,22 +1,32 @@
 import { NgModule, Pipe } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import{LimitCharactersPipe} from "./pipes/limit-characters.pipe"
+import{LimitCharactersPipe} from "./pipes/limit-characters.pipe";
+import { CommentsComponent } from './components/comments/comments.component';
+import { CommentItemComponent } from './components/comments/comment-item/comment-item.component'
 
-const pipes = [
+const PIPES = [
   LimitCharactersPipe
 ]
+
+const COMPONENTS = [
+  CommentsComponent,
+  CommentItemComponent
+]
+
 
 
 @NgModule({
   declarations: [
-    ...pipes
+    ...PIPES,
+    ...COMPONENTS
   ],
   imports: [
     CommonModule
   ],
   exports: [
     CommonModule,
-    ...pipes
+    ...PIPES,
+    ...COMPONENTS
   ]
 })
 export class SharedModule { }
