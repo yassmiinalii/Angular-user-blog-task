@@ -1,7 +1,8 @@
 import { Observable } from 'rxjs';
 import { IComment } from '../../models/icomment';
-import { ApiService } from './../../../home/services/api.service';
+
 import { Component, Input, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/core/services/api/api.service';
 
 @Component({
   selector: 'app-comments',
