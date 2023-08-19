@@ -3,7 +3,8 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import{LimitCharactersPipe} from "./pipes/limit-characters.pipe";
 import { CommentsComponent } from './components/comments/comments.component';
 import { CommentItemComponent } from './components/comments/comment-item/comment-item.component';
-import { ErrorAlertComponent } from './components/error-alert/error-alert.component'
+import { ErrorAlertComponent } from './components/error-alert/error-alert.component';
+import { SkeltonLoaderComponent } from './components/skelton-loader/skelton-loader.component'
 
 const PIPES = [
   LimitCharactersPipe
@@ -12,7 +13,8 @@ const PIPES = [
 const COMPONENTS = [
   CommentsComponent,
   CommentItemComponent,
-  ErrorAlertComponent
+  ErrorAlertComponent,
+  SkeltonLoaderComponent
 ]
 
 const MODULES = [
@@ -25,6 +27,7 @@ const MODULES = [
   declarations: [
     ...PIPES,
     ...COMPONENTS,
+
 
   ],
   imports: [
