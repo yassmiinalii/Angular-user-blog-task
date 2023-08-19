@@ -1,31 +1,40 @@
-import { ApiService } from './../../home/services/api.service';
+
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, filter, first, map, take, tap } from 'rxjs';
+import {  Observable, ReplaySubject, Subject, catchError, finalize, map, of, take } from 'rxjs';
 import { IUser } from 'src/app/shared/models/iuser';
+import { ApiService } from '../services/api/api.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StoreService {
 
-  private UsersSubject = new BehaviorSubject<IUser[]>([]);
-  users$: Observable<IUser[]> = this.UsersSubject.asObservable();
+  private usersSubject = new ReplaySubject<IUser[]>(1);
+  users$: Observable<IUser[]> = this.usersSubject.asObservable();
+  private usersErrorSubject = new Subject<string>();
+  usersError$: Observable<string> = this.usersErrorSubject.asObservable();
 
-  constructor( private apiService: ApiService) { }
+  constructor(private apiService: ApiService) {}
+
 
   init() {
     const users$ = this.apiService.getAllUsers();
-    users$.pipe(
-      // Missing point, how to stop operators execution after error happened
-      //Handle error
-    ).subscribe((users: IUser[]) => this.UsersSubject.next(users));
+    users$
+      .pipe(
+        catchError(error => {
+          this.usersErrorSubject.next('An error occurred while fetching users.');
+          return of([]);
+        }),
+        finalize(() => this.usersErrorSubject.complete()),
+      )
+      .subscribe((users: IUser[]) => this.usersSubject.next(users));
   }
 
   selectUserById(userId: number) {
     return this.users$.pipe(
-      map((users) => users.find((user) => user.id == userId)),
-      filter((user) => !!user),
-      first()
+      catchError(() => of(null)),
+      map((users) => users?.find((user) => user.id === userId)),
+      take(1)
     );
   }
 

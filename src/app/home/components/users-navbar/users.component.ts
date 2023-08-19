@@ -1,7 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ApiService } from '../../services/api.service';
-import { IUser } from 'src/app/shared/models/iuser';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { StoreService } from 'src/app/core/store/store.service';
 
 @Component({
@@ -11,7 +8,11 @@ import { StoreService } from 'src/app/core/store/store.service';
 })
 export class UsersComponent implements OnInit {
 
-  users$ : Observable<IUser[]> = this.store.users$;
+
+  users$ = this.store.users$;
+  usersError$ = this.store.usersError$;
+
+
   constructor( private store : StoreService){}
   ngOnInit(): void { }
 
