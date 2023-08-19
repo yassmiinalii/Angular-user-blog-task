@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-users',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent {
+
+
+  @Input() userId: number = 0;
+
+
 
 }

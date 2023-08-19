@@ -1,0 +1,36 @@
+@import "../../../../../assets/style/sass-utils/variables";
+.user-nav-wrapper{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  padding-top: 1rem;
+  padding-bottom: 0;
+  border-bottom: solid 1px  $gray-light-color;
+  justify-content: center;
+  .user-nav-link{
+    text-decoration: none ;
+    color: $font-gray-color;
+    font-size: 1rem;
+    padding: .5rem;
+    padding-bottom: 1rem;
+    flex-shrink: 0;
+    cursor: pointer;
+    &:hover{
+      color: $primary-dark-color;
+    }
+
+  }
+
+  .active{
+    font-weight: 500;
+    color: $font-black-color;
+    border-bottom: solid 1px $font-black-color;
+  }
+
+  @media screen and (max-width: 768px) {
+    justify-content: start;
+  }
+}
+
+

@@ -1,1 +1,15 @@
-<p>users works!</p>
+<!-- <nav class="nav users-nav-wrapper">
+  <a class="nav-link active" aria-current="page" href="#">Active</a>
+  <a class="nav-link" routerLink="/1">Link</a>
+  <a *ngFor="let item of [1,2,3,4,5,6,7,8,3,3]" class="nav-link " href="#"    > User Name</a>
+</nav> -->
+
+<div class="nav user-nav-wrapper ">
+
+
+    <a *ngFor="let item of [1,2,3,4,5,6,7,8,3,3]; let i = index"  class="user-nav-link" [class.active]="i === userId" > user name </a>
+
+
+
+</div>
+
