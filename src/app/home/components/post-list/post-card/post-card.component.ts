@@ -14,7 +14,7 @@ import { IUser } from 'src/app/shared/models/iuser';
 export class PostCardComponent implements  OnChanges {
 
   @Input() post: IPost;
-  user$ :  Observable<IUser | undefined>
+  user$ :  Observable<IUser | null>
   isViewComments: boolean = false;
   isUserImageLoaded : boolean = false;
   isPostImageLoaded : boolean = false;
@@ -38,8 +38,5 @@ export class PostCardComponent implements  OnChanges {
   onLoadPostImage(){
     this.isPostImageLoaded = true;
   }
-
-
-
 
 }
