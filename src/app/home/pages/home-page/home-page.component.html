@@ -1,4 +1,6 @@
 <div class="container">
   <app-users></app-users>
-  <app-post-list></app-post-list>
+  <ng-container *ngIf="(queryParam$ | async) as queryParam">
+    <app-post-list *ngIf="queryParam.userId" ></app-post-list>
+  </ng-container>
 </div>
