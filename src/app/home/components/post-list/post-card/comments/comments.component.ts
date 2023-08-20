@@ -2,8 +2,9 @@ import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Observable, catchError, of } from 'rxjs';
 
-import { IComment } from '../../../../../shared/models/icomment';
+
 import { ApiService } from 'src/app/core/services/api/api.service';
+import { IComment } from 'src/app/shared/models/icomment';
 
 const COMMENT_ANIMATION =  [trigger('commentAnimation', [
   transition(':enter', [
@@ -43,7 +44,5 @@ export class CommentsComponent implements OnInit {
   identify(index:number, comment:IComment){
     return comment.id;
   }
-
-
 
 }

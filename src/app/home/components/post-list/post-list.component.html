@@ -5,9 +5,9 @@
 </section>
 
 <ng-template #loadingOrError>
-    <app-error-alert *ngIf="error;"  [message]="error"></app-error-alert>
-    <div  *ngIf="!error;"  class="row justify-content-center mt-4">
-      <div  *ngFor="let post of [1,2,3]" class=" col-12 col-md-8">
+    <app-error-alert *ngIf="error;" [message]="error"></app-error-alert>
+    <div *ngIf="!error;" class="row justify-content-center mt-4">
+      <div *ngFor="let post of [1,2]" class=" col-12 col-md-8">
         <app-post-skelton-loader></app-post-skelton-loader>
       </div>
     </div>

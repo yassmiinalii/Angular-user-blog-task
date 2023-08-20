@@ -1,5 +1,5 @@
 
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { StoreService } from 'src/app/core/store/store.service';
 import { IPost } from 'src/app/shared/models/ipost';
@@ -11,7 +11,7 @@ import { IUser } from 'src/app/shared/models/iuser';
   styleUrls: ['./post-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PostCardComponent implements  OnChanges {
+export class PostCardComponent implements OnInit  {
 
   @Input() post: IPost;
   user$ :  Observable<IUser | null>
@@ -21,9 +21,8 @@ export class PostCardComponent implements  OnChanges {
 
   constructor(private store : StoreService){}
 
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if(changes.post.currentValue){
+  ngOnInit(): void {
+    if(this.post.userId){
       this.user$ = this.store.selectUserById(this.post.userId)
     }
   }

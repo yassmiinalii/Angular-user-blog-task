@@ -9,18 +9,14 @@ import { IUser } from 'src/app/shared/models/iuser';
 })
 export class UsersComponent implements OnInit {
 
-
   users$ = this.store.users$;
   usersError$ = this.store.usersError$;
-
 
   constructor( private store : StoreService){}
   ngOnInit(): void { }
 
-
   identify(index:number, user:IUser){
     return user.id;
   }
-
 
 }

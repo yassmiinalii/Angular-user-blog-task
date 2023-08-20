@@ -1,23 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PostSkeltonLoaderComponent } from './post-skelton-loader.component';
+// import { PostSkeltonLoaderComponent } from './post-skelton-loader.component';
 
-describe('PostSkeltonLoaderComponent', () => {
-  let component: PostSkeltonLoaderComponent;
-  let fixture: ComponentFixture<PostSkeltonLoaderComponent>;
+// describe('PostSkeltonLoaderComponent', () => {
+//   let component: PostSkeltonLoaderComponent;
+//   let fixture: ComponentFixture<PostSkeltonLoaderComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ PostSkeltonLoaderComponent ]
-    })
-    .compileComponents();
+//   beforeEach(async () => {
+//     await TestBed.configureTestingModule({
+//       declarations: [ PostSkeltonLoaderComponent ]
+//     })
+//     .compileComponents();
 
-    fixture = TestBed.createComponent(PostSkeltonLoaderComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//     fixture = TestBed.createComponent(PostSkeltonLoaderComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });

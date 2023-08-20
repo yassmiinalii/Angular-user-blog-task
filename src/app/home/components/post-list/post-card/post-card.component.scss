@@ -40,7 +40,6 @@
     }
   }
 
-
   @media screen and (max-width: 768px) {
     margin: .8rem;
     padding: 1.5rem;
@@ -53,6 +52,7 @@
     }
     .post-img {
       height: 100%;
+      width: auto;
     }
     .btn-comment {
       margin-top: 1rem;

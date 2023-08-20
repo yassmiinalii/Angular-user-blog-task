@@ -11,6 +11,7 @@ import { PostSkeltonLoaderComponent } from './components/post-list/post-card/pos
 import { CommentSkeltonLoaderComponent } from './components/post-list/post-card/comments/comment-skelton-loader/comment-skelton-loader.component';
 import { CommentsComponent } from './components/post-list/post-card/comments/comments.component';
 import { CommentItemComponent } from './components/post-list/post-card/comments/comment-item/comment-item.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 
 const COMPONENTS = [
@@ -27,7 +28,8 @@ const COMPONENTS = [
 
 @NgModule({
   declarations: [
-   ...COMPONENTS
+   ...COMPONENTS,
+   NotFoundPageComponent
   ],
   imports: [
     SharedModule,

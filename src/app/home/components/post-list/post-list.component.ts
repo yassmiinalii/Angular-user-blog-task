@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-
 import { ActivatedRoute } from '@angular/router';
 import { Observable, catchError, of, switchMap } from 'rxjs';
-import { IPost } from 'src/app/shared/models/ipost';
 
 import { ApiService } from 'src/app/core/services/api/api.service';
-
+import { IPost } from 'src/app/shared/models/ipost';
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.scss'],
 })
 export class PostListComponent implements OnInit {
+
   posts$: Observable<IPost[]>;
   error: string;
 
