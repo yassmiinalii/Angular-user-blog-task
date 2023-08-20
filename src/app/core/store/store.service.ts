@@ -33,8 +33,7 @@ export class StoreService {
   selectUserById(userId: number) {
     return this.users$.pipe(
       catchError(() => of(null)),
-      map((users) => users?.find((user) => user.id === userId)),
-      take(1)
+      map((users) => users?.find((user) => user.id === userId) || null),
     );
   }
 
