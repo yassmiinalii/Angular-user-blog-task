@@ -1,4 +1,5 @@
-@import "src/assets/style/style";
+@import "src/assets/style/sass-utils/_variables";
+@import "src/assets/style/sass-utils/mixins";
 .comment-wrapper{
   padding: 6px;
   margin: 2px;

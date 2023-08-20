@@ -1,4 +1,5 @@
-@import "/src/assets/style/style.scss";
+@import "/src/assets/style/sass-utils/_mixins.scss";
+@import "/src/assets/style/sass-utils/_variables.scss";
 
 .post-card-wrapper {
   cursor: pointer;
