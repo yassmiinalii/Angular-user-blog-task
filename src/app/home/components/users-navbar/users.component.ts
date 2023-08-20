@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StoreService } from 'src/app/core/store/store.service';
+import { IUser } from 'src/app/shared/models/iuser';
 
 @Component({
   selector: 'app-users',
@@ -15,5 +16,11 @@ export class UsersComponent implements OnInit {
 
   constructor( private store : StoreService){}
   ngOnInit(): void { }
+
+
+  identify(index:number, user:IUser){
+    return user.id;
+  }
+
 
 }

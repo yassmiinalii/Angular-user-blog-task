@@ -1,5 +1,5 @@
 <section class="row justify-content-center mt-4" *ngIf="(posts$ | async) as posts; else loadingOrError">
-  <div  *ngFor="let post of posts" class=" col-12 col-md-8">
+  <div  *ngFor="let post of posts; trackBy:identify" class=" col-12 col-md-8">
     <app-post-card [post]="post"  ></app-post-card>
   </div>
 </section>

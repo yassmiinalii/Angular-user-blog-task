@@ -22,10 +22,14 @@ export class CommentsComponent implements OnInit {
         catchError((error) => {
           this.error = 'An error occurred while fetching comments!';
           this.cdr.detectChanges();
-          return of(); // Emit an empty array as a fallback value
+          return of();
         })
       );
     }
+  }
+
+  identify(index:number, comment:IComment){
+    return comment.id;
   }
 
 

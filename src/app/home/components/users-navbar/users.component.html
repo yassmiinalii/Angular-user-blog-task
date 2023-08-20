@@ -1,5 +1,5 @@
 <div class="nav user-nav-wrapper" *ngIf="(users$ | async) as users ; else loading ">
-  <a *ngFor="let user of users; let i = index"
+  <a *ngFor="let user of users; let i = index ; trackBy:identify "
      class="user-nav-link"
      routerLink="/"
      routerLinkActive="active"

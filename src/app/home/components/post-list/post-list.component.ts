@@ -34,4 +34,9 @@ export class PostListComponent implements OnInit {
       })
     );
   }
+
+  identify(index:number, post:IPost){
+    return post.id;
+  }
+
 }

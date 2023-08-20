@@ -1,5 +1,5 @@
 <div *ngIf="(comments$ | async) as comments; else loadingOrError">
-  <li *ngFor="let comment of comments  " >
+  <li *ngFor="let comment of comments  trackBy:identify  " >
     <app-comment-item [comment]="comment" ></app-comment-item>
   </li>
 </div>
