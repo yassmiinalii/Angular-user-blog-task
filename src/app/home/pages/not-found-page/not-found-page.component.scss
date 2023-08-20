@@ -1,0 +1,10 @@
+@import "src/assets/style/sass-utils/_mixins.scss";
+.not-found-page{
+  @include center-element();
+  margin-top: 10rem;
+
+  flex-direction: column;
+  gap: 2rem;
+
+
+}
