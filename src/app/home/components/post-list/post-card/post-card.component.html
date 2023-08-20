@@ -27,8 +27,8 @@
   </div>
 
   <button class="btn  btn-comment" (click)="onViewComments()">
-    <i class="bi bi-eye"></i>
-    View Comments
+    <i  class="bi " [ngClass]="isViewComments? 'bi-chevron-up': 'bi-chevron-down' " ></i>
+    {{isViewComments? 'Hide Comments ': ' Show Comments'}}
   </button>
   <app-comments *ngIf="isViewComments" [postId]="post.id" ></app-comments>
 </div>
