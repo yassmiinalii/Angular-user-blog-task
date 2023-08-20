@@ -1,23 +1,30 @@
-import { Observable } from 'rxjs';
+import { Observable, catchError, finalize, of, take, throwError } from 'rxjs';
 import { IComment } from '../../../../../shared/models/icomment';
 
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/core/services/api/api.service';
 
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
-  styleUrls: ['./comments.component.scss']
+  styleUrls: ['./comments.component.scss'],
 })
 export class CommentsComponent implements OnInit {
 
   @Input() postId : number;
-  comments$ : Observable<IComment[]> ;
-  constructor(private apiService: ApiService){}
+  comments$ : Observable<IComment[] > ;
+  error = '';
+  constructor(private apiService: ApiService, private cdr: ChangeDetectorRef){}
 
   ngOnInit(): void {
-    if(this.postId){
-      this.comments$ = this.apiService.getCommentsByPostId(this.postId)
+    if (this.postId) {
+      this.comments$ = this.apiService.getCommentsByPostId(this.postId).pipe(
+        catchError((error) => {
+          this.error = 'An error occurred while fetching comments!';
+          this.cdr.detectChanges();
+          return of(); // Emit an empty array as a fallback value
+        })
+      );
     }
   }
 

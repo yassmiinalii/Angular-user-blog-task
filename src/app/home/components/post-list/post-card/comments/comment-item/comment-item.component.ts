@@ -9,5 +9,10 @@ import { IComment } from 'src/app/shared/models/icomment';
 export class CommentItemComponent {
 
   @Input() comment : IComment;
+  isImgCommentLoaded: boolean = false;
+
+  onImgLoaded(){
+    this.isImgCommentLoaded = true;
+  }
 
 }

@@ -1,5 +1,14 @@
-<div>
-  <li *ngFor="let comment of comments$ | async " >
+<div *ngIf="(comments$ | async) as comments; else loadingOrError">
+  <li *ngFor="let comment of comments  " >
     <app-comment-item [comment]="comment" ></app-comment-item>
   </li>
 </div>
+
+
+<ng-template #loadingOrError>
+    <app-error-alert *ngIf="error;" [message]="error"></app-error-alert>
+    <ng-container *ngIf="!error;" >
+        <app-comment-skelton-loader *ngFor="let comment of [1,2,3,4,5]  " ></app-comment-skelton-loader>
+    </ng-container>
+</ng-template>
+

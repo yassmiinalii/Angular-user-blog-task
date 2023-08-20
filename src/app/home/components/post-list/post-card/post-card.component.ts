@@ -11,7 +11,7 @@ import { IUser } from 'src/app/shared/models/iuser';
   styleUrls: ['./post-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PostCardComponent implements  OnInit , OnChanges {
+export class PostCardComponent implements  OnChanges {
 
   @Input() post: IPost;
   user$ :  Observable<IUser | undefined>
@@ -21,9 +21,6 @@ export class PostCardComponent implements  OnInit , OnChanges {
 
   constructor(private store : StoreService){}
 
-  ngOnInit(): void {
-
-  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if(changes.post.currentValue){

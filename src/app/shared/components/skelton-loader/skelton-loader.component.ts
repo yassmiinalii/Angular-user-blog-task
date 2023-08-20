@@ -7,8 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class SkeltonLoaderComponent {
 
-  @Input() for =  [];
-  @Input() col =  [];
+  @Input() for :Array<any>;
+  @Input() col :  string;
 
 
 }

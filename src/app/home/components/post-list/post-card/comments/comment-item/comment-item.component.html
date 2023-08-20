@@ -2,8 +2,13 @@
   <div class="d-flex  gap-2  ">
     <div class="comment-user-img-wrapper">
       <img class="img-fluid user-img"
-           src="https://source.unsplash.com/random/80×80/?profile"
-           alt="">
+
+           ngSrc="https://source.unsplash.com/random/80×80/?profile"
+           [class.placeholder]="!isImgCommentLoaded"
+           width="80"
+           height="80"
+           (load)="onImgLoaded()"
+           alt="user comment image">
     </div>
     <div>
       <p class="comment-user-title">{{comment.name}}</p>
@@ -12,6 +17,4 @@
       </p>
     </div>
   </div>
-
-
 </div>

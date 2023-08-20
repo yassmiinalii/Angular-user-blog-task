@@ -1,0 +1,15 @@
+@import "../comment-item/comment-item.component.scss";
+
+.comment-skelton {
+  .skelton-comment-body-wrapper {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .placeholder{
+    border-radius: 20px;
+    opacity: 0.3;
+  }
+
+
+}
