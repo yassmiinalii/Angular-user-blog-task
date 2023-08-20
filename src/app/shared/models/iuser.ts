@@ -4,8 +4,8 @@ export interface IUser {
   username: string;
   email: string;
   address?: Address;
-  phone: string;
-  website: string;
+  phone?: string;
+  website?: string;
   company?: Company;
 }
 
