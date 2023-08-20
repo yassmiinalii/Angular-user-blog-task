@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { IComment } from '../../models/icomment';
+import { IComment } from '../../../../../shared/models/icomment';
 
 import { Component, Input, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/core/services/api/api.service';
