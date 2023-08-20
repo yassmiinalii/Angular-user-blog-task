@@ -4,7 +4,7 @@
     <div class="user-img-wrapper" [class.placeholder-glow]="!isUserImageLoaded">
       <img class="img-fluid user-img"
            ngSrc="{{'https://source.unsplash.com/random/60x60/?profile?'+user.id}}"
-           width="60" height="60" priority
+           width="60" height="60"
            [class.placeholder]="!isUserImageLoaded"
            (load)="onLoadUserImage()"
            [alt]="user.name + 'image'" />
