@@ -13,23 +13,25 @@ import { CommentsComponent } from './components/post-list/post-card/comments/com
 import { CommentItemComponent } from './components/post-list/post-card/comments/comment-item/comment-item.component';
 
 
+const COMPONENTS = [
+  UsersComponent,
+  PostCardComponent,
+  PostListComponent,
+  HomePageComponent,
+  PostSkeltonLoaderComponent,
+  CommentSkeltonLoaderComponent,
+  CommentsComponent,
+  CommentItemComponent,
+]
+
 
 @NgModule({
   declarations: [
-    UsersComponent,
-    PostCardComponent,
-    PostListComponent,
-    HomePageComponent,
-    PostSkeltonLoaderComponent,
-    CommentSkeltonLoaderComponent,
-    CommentsComponent,
-    CommentItemComponent,
+   ...COMPONENTS
   ],
   imports: [
     SharedModule,
     HomeRoutingModule,
-    NgOptimizedImage
-
 
   ]
 })

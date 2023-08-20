@@ -16,7 +16,8 @@ const COMPONENTS = [
 
 const MODULES = [
   CommonModule,
-  // NgOptimizedImage
+  NgOptimizedImage,
+
 ]
 
 
