@@ -1,0 +1,17 @@
+@import "../../../../assets/style/sass-utils/_mixins.scss";
+@import "../../../../assets/style/sass-utils/variables";
+.welcome-message-container{
+  padding: 2rem;
+  margin: 3rem;
+  @include border();
+  .welcome-icon{
+    font-size: 3rem;
+  }
+  p{
+   margin-top: 1rem;
+   font-size: 1.2rem;
+   .highlight-text{
+    color: $primary-color;
+   }
+  }
+}

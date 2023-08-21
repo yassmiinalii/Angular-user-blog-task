@@ -1,6 +1,9 @@
 <div class="container">
   <app-users></app-users>
   <ng-container *ngIf="(queryParam$ | async) as queryParam">
-    <app-post-list *ngIf="queryParam.userId !== undefined" ></app-post-list>
+    <app-post-list *ngIf="queryParam.userId !== undefined ; else noPosts" ></app-post-list>
+    <ng-template #noPosts>
+      <app-welcome-message ></app-welcome-message>
+    </ng-template>
   </ng-container>
 </div>

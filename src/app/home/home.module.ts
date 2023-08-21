@@ -11,6 +11,7 @@ import { PostSkeltonLoaderComponent } from './components/post-list/post-card/pos
 import { CommentSkeltonLoaderComponent } from './components/post-list/post-card/comments/comment-skelton-loader/comment-skelton-loader.component';
 import { CommentsComponent } from './components/post-list/post-card/comments/comments.component';
 import { CommentItemComponent } from './components/post-list/post-card/comments/comment-item/comment-item.component';
+import { WelcomeMessageComponent } from './components/welcome-message/welcome-message.component';
 
 
 const COMPONENTS = [
@@ -28,6 +29,7 @@ const COMPONENTS = [
 @NgModule({
   declarations: [
    ...COMPONENTS,
+   WelcomeMessageComponent,
 
   ],
   imports: [
