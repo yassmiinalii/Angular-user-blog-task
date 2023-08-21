@@ -1,27 +1,37 @@
-# UsersBlogApp
+# Users Blog App  Frontend Task
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+
+
+## The Task requirement is:
+
+Please complete the following task:
+1. Create a new angular project.
+2. Create a web page with a navbar on top of it.
+3. The navbar should include usernames from the following API:
+[https://jsonplaceholder.typicode.com/users]
+4. When you click on a certain username from the navbar, the posts made by that user should be loaded to
+the page. Use the following API to get the posts made by a certain user:
+[https://jsonplaceholder.typicode.com/posts?userId=userId]
+5. Each post should include the following:
+• Username or email.
+• User profile image and post image. For both, you can use a random image from any image
+placeholder website (e.g. unsplash.com) just to keep the UI consistent.
+• Post text with a limit for the number of characters included (use a pipe).
+• A button to show comments. You can get the comments made to a certain post using the following API:
+[https://jsonplaceholder.typicode.com/comments?postId=postId]
+
+6. For all APIs mentioned above, when you call an API once, it shouldn’t be called again. So, please cache all APIs.
+7. Create a neat, responsive UI using SASS. You may only use Bootstrap, yet ready-to-use libraries like
+angular material are not allowed. The general identity, colors, fonts, and different design elements are of your choice.
+
+
+## Deployment Version
+https://users-blog-app.web.app/
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
